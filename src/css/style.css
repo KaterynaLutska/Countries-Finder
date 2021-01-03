@@ -1,4 +1,74 @@
-body {
-  background-color: black;
-  color: wheat;
+/* для плавної прокрутки */
+html {
+  scroll-behavior: smooth;
 }
+
+body {
+  background-color: rgb(165, 104, 104);
+  padding-top: 30px;
+  color: rgb(236, 198, 126);
+  background-image: url("https://i2.rozetka.ua/goods/15920371/165673299_images_15920371370.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  /* padding-left: 100px; */
+}
+
+h1 {
+  font-size: 70px;
+}
+p {
+  font-style: bold;
+  font-weight: 600;
+}
+
+.search-contry {
+  margin-bottom: 30px;
+}
+
+.input {
+  display: flex;
+  margin-right: auto;
+  margin-left: auto;
+
+  height: 40px;
+  width: 240px;
+}
+
+.wrap {
+  font-style: bold;
+  font-weight: 800;
+}
+
+.country {
+  display: flex;
+  margin-right: auto;
+  margin-left: auto;
+  width: auto;
+  background-repeat: no-repeat;
+  background-size: contain;
+  box-shadow: 10px 10px 8px 2px rgba(0, 0, 0, 0.3);
+  width: 375px;
+  height: 250px;
+}
+
+.country-body {
+  padding-left: 10px;
+  padding-right: 10px;
+  background-image: -webkit-gradient(
+    linear,
+    left top,
+    right top,
+    from(rgba(47, 48, 58, 0.8)),
+    to(rgba(47, 48, 58, 0.8))
+  );
+  background-image: linear-gradient(
+    to right,
+    rgba(47, 48, 58, 0.6),
+    rgba(47, 48, 58, 0.6)
+  );
+}
+
+/* [data-pnotify].pnotify.stack-bar-top {
+  width: 100%;
+  border-radius: 0;
+} */
