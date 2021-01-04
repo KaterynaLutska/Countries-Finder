@@ -1,19 +1,19 @@
 import refs from "./refs";
 import countryCardMarcup from "../templates/country.hbs";
-import errorNotify from "./components/notifications";
+import countryName from "../templates/name-country.hbs";
+import notify from "./components/notifications";
 //import debounce from "lodash.debounce";
 import API from "./api-service.js";
-import countryName from "../templates/name-country.hbs";
-
-// функція відмальовки карточки країни //
 
 refs.searchForm.addEventListener("input", findCountry);
 
+// функція відмальовки карточки країни //
 function renderCountryCard(country) {
   const marcup = countryCardMarcup(country);
   refs.countryCard.innerHTML = marcup;
 }
 
+// функція відмальовки cписку країни //
 function tenCountries(country) {
   const marcup = countryName(country);
   refs.countryCard.innerHTML = marcup;
@@ -31,17 +31,16 @@ function findCountry(event) {
       renderCountryCard;
       couuntryNumber(renderCountryCard);
       console.log(renderCountryCard.length);
-    }) // якщо все добре, то на проміс ми вішаємо наступний then з необіхдними даними
+    })
     .catch((error) => {
-      // якщо все погано  - спіймали відповідь в catch
       console.log(error);
     });
-  //.finally(() => input.reset()); // очищуємо поля input
 }
 
+// функція, яка рахує кількість країни //
 function couuntryNumber(countryNumber) {
   if (countryNumber.length > 10) {
-    errorNotify();
+    notify();
   } else if (countryNumber.length > 1 && countryNumber.length <= 10) {
     //видалити нотіфікашку
     tenCountries(countryNumber);

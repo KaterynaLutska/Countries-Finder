@@ -1,12 +1,9 @@
 const BASE_URL = `https://restcountries.eu/rest/v2/name/`;
 
-// функція, яка повертає json//
+// функція, яка повертає відповідь з бекенду у вигляді json//
 function fetchCountryByName(countryName) {
-  return fetch(`${BASE_URL}${countryName}`) // повертає проміс
-    .then((response) => {
-      // розпарсили відповідь від бекенду з допомогою then //
-      return response.json(); // повертає ще один проміс, результатом якого є respnose.json
-    });
+  return fetch(`${BASE_URL}${countryName}`).then((response) => {
+    return response.json();
+  });
 }
-// console.log(fetchCountryByName());
 export default { fetchCountryByName };
