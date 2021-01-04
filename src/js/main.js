@@ -2,12 +2,13 @@ import refs from "./refs";
 import countryCardMarcup from "../templates/country.hbs";
 import countryName from "../templates/name-country.hbs";
 import notify from "./components/notifications";
-//import debounce from "lodash.debounce";
+import debounce from "lodash.debounce";
 import API from "./api-service.js";
 
-refs.searchForm.addEventListener("input", findCountry);
+refs.searchForm.addEventListener("input", debounce(findCountry, 500));
 
-// функція відмальовки карточки країни //
+// функція відмальовки карточки країни //√
+
 function renderCountryCard(country) {
   const marcup = countryCardMarcup(country);
   refs.countryCard.innerHTML = marcup;
@@ -23,7 +24,7 @@ function tenCountries(country) {
 function findCountry(event) {
   event.preventDefault();
 
-  const input = event.currentTarget;
+  const input = refs.searchForm;
   const searchQuery = input.elements.query.value;
 
   API.fetchCountryByName(searchQuery)
