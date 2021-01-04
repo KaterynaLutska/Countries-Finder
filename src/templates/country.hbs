@@ -4,9 +4,12 @@
         <h1 class='country-name'>{{this.name}}</h1>
         <p class="country-capital"> <span class="wrap">Capital: </span>{{this.capital}}</p>
         <p class="country-population"><span class="wrap">Population: </span>{{this.population}}</p>
-        {{#each languages}}
-        <p class="country-languages"> <span class="wrap">Languages: </span>{{this.name}}</p>
-        {{/each}}
+        <ul class="country-languages"> <span class="wrap">Languages: </span>
+            {{#each languages}}
+            <li class="country-languages"> {{this.name}}</li>
+            {{/each}}
+        </ul>
+
         {{#each currencies}}
         <p class="country-currencies"><span class="wrap">Currencies: </span>{{this.name}}</p>
     </div>
