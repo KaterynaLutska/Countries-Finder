@@ -1,4 +1,4 @@
-# **Countrie **
+# **Countrie**
 
 ## Пошук країн
 
